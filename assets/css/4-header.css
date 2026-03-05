@@ -1,0 +1,32 @@
+/* ======================================
+   HEADER E NAVEGAÇÃO
+   ====================================== */
+
+.header {
+    display: flex;
+    background-color: var(--primary-bg-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.header__toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header_brand .brand_logo {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+#toggleTheme {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+}
+
+html[data-theme='dark'] .brand_logo {
+    filter: invert(1);
+}

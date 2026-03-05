@@ -1,0 +1,22 @@
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--primary-bg-color);
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 100;
+}
+
+footer p {  
+    font-size: 0.875rem;
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+}
