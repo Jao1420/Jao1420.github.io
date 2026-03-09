@@ -122,39 +122,242 @@
 
 
 @media (max-width: 768px) {
-    #textH1 {
-        display: block;
-        font-size: clamp(1rem, 4vw, 1.8rem);
-        letter-spacing: clamp(0.5px, 0.4vw, 3px);
-        border-right-width: 2px;
-        line-height: 1.2;
-        white-space: normal;
-        word-spacing: 999px;
-        height: 1.4em;
+    h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
     }
-
+    
+    #textH1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 0;
+        letter-spacing: clamp(0.5px, 0.4vw, 3px);
+        white-space: normal;
+        width: 100%;
+        border-right: none;
+        animation: none;
+        overflow: visible;
+        line-height: 1.3;
+    }
+    
+    #textH1::before {
+        content: 'Soluções Criativas';
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--primary-color);
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line1 2s steps(20, end) forwards,
+                   blink-caret 0.7s step-end 10;
+    }
+    
     #textH1 b {
         display: block;
-        margin-top: 0.3rem;
-        word-spacing: normal;
+        text-align: center;
+        font-size: 0;
+        font-weight: 200;
+        opacity: 0;
+        animation: fade-in 0.3s ease 2s forwards;
+    }
+    
+    #textH1 b::before {
+        content: '&';
+        display: inline-block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid transparent;
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line2 0.5s steps(1, end) 2s forwards;
+    }
+    
+    #textH1 b::after {
+        content: 'Desenvolvimento';
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--primary-color);
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line3 2s steps(20, end) 2.5s forwards,
+                   blink-caret 0.7s step-end infinite 2.5s;
+    }
+    
+    @keyframes typing-line1 {
+        0% { 
+            width: 0;
+            border-right-color: var(--primary-color);
+        }
+        99% {
+            border-right-color: var(--primary-color);
+        }
+        100% { 
+            width: 100%; 
+            border-right-color: transparent; 
+        }
+    }
+    
+    @keyframes typing-line2 {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+    
+    @keyframes typing-line3 {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+    
+    @keyframes fade-in {
+        to { opacity: 1; }
+    }
+    
+    .main__content1 > p {
+        font-size: 0.9rem;
     }
 }
 @media (max-width: 600px) {
-    #textH1 {
-        display: block;
-        font-size: clamp(1rem, 4vw, 1.8rem);
-        letter-spacing: clamp(0.5px, 0.4vw, 3px);
-        border-right-width: 2px;
-        line-height: 1.2;
-        white-space: normal;
-        word-spacing: 999px;
-        height: 1.4em;
+    h1 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
     }
-
+    
+    #textH1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 0;
+        letter-spacing: clamp(0.5px, 0.4vw, 3px);
+        white-space: normal;
+        width: 100%;
+        border-right: none;
+        animation: none;
+        overflow: visible;
+        line-height: 1.3;
+    }
+    
+    #textH1::before {
+        content: 'Soluções Criativas';
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--primary-color);
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line1 2s steps(20, end) forwards,
+                   blink-caret 0.7s step-end 10;
+    }
+    
     #textH1 b {
         display: block;
-        margin-top: 0.3rem;
-        word-spacing: normal;
+        text-align: center;
+        font-size: 0;
+        font-weight: 200;
+        opacity: 0;
+        animation: fade-in 0.3s ease 2s forwards;
+    }
+    
+    #textH1 b::before {
+        content: '&';
+        display: inline-block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid transparent;
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line2 0.5s steps(1, end) 2s forwards;
+    }
+    
+    #textH1 b::after {
+        content: 'Desenvolvimento';
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--primary-color);
+        padding-right: 0.3rem;
+        width: 0;
+        animation: typing-line3 2s steps(20, end) 2.5s forwards,
+                   blink-caret 0.7s step-end infinite 2.5s;
+    }
+    
+    @keyframes typing-line1 {
+        0% { 
+            width: 0;
+            border-right-color: var(--primary-color);
+        }
+        99% {
+            border-right-color: var(--primary-color);
+        }
+        100% { 
+            width: 100%; 
+            border-right-color: transparent; 
+        }
+    }
+    
+    @keyframes typing-line2 {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+    
+    @keyframes typing-line3 {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+    
+    @keyframes fade-in {
+        to { opacity: 1; }
+    }
+    
+    .main__content1 > p {
+        font-size: 0.85rem;
+    }
+    
+    /* Seção Sobre - Mobile */
+    .about__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .about__photo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about__photo-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about__subtitle {
+        justify-content: center;
     }
 }
 
+/* Tablet - Seção Sobre */
+@media (min-width: 750px) {
+    .about {
+        padding: 4rem 6rem;
+    }
+    
+    .about__container {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* Desktop Grande - Seção Sobre */
+@media (min-width: 1400px) {
+    .about {
+        padding: 4rem 15rem;
+    }
+}
