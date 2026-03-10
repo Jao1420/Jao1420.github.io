@@ -25,6 +25,7 @@
 
 .about__photo {
     flex-shrink: 0;
+    transition: transform 0.1s ease-out;
 }
 
 .about__photo-img {
@@ -104,6 +105,7 @@
     color: var(--title-color);
     line-height: 1.6;
 }
+
 /* ======================================
    SEÇÃO SOBRE BREVE
    ====================================== */
@@ -115,6 +117,8 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .about--brief h2 {
@@ -123,16 +127,116 @@
     font-weight: 700;
     margin-bottom: 0;
     color: var(--title-color);
+    position: relative;
+    z-index: 2;
+}
+
+/* Linhas animadas do background */
+.about__lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about__line {
+    position: relative;
+    width: 1px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.about__line::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 40vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: slideUp 8s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.about__line:nth-child(1)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FF4500 75%, #FF4500 100%);
+    animation-delay: 0.5s;
+}
+
+.about__line:nth-child(2)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #32CD32 75%, #32CD32 100%);
+    animation-delay: 1s;
+}
+
+.about__line:nth-child(3)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #1E90FF 75%, #1E90FF 100%);
+    animation-delay: 1.5s;
+}
+
+.about__line:nth-child(4)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FFD700 75%, #FFD700 100%);
+    animation-delay: 2s;
+}
+
+.about__line:nth-child(5)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #8A2BE2 75%, #8A2BE2 100%);
+    animation-delay: 2.5s;
+}
+
+.about__line:nth-child(6)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #20B2AA 75%, #20B2AA 100%);
+    animation-delay: 3s;
+}
+
+.about__line:nth-child(7)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #DC143C 75%, #DC143C 100%);
+    animation-delay: 3.5s;
+}
+
+.about__line:nth-child(8)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00FA9A 75%, #00FA9A 100%);
+    animation-delay: 4s;
+}
+
+.about__line:nth-child(9)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FF1493 75%, #FF1493 100%);
+    animation-delay: 4.5s;
+}
+
+.about__line:nth-child(10)::before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00BFFF 75%, #00BFFF 100%);
+    animation-delay: 5s;
+}
+
+@keyframes slideUp {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 110%;
+    }
 }
 
 .about__brief-content {
     display: flex;
     gap: 2rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .about--brief .about__photo {
     flex-shrink: 0;
+    transition: transform 0.1s ease-out;
 }
 
 .about--brief .about__photo-img {
@@ -150,6 +254,7 @@
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 2rem;
+    transition: transform 0.1s ease-out;
 }
 
 .about__description {
@@ -171,6 +276,14 @@
 }
 
 @media(max-width: 768px) {
+    .about--brief {
+        padding: 4rem 1rem;
+    }
+
+    .about__lines {
+        width: 100vw;
+    }
+
     .about__brief-content {
         flex-direction: column;
         align-items: center;
