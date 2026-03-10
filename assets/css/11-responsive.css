@@ -139,24 +139,24 @@
         animation: none;
         overflow: visible;
         line-height: 1.3;
+        text-align: left;
     }
     
     #textH1::before {
-        content: 'Soluções Criativas';
+        content: 'Soluções Criativas para';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid var(--primary-color);
+        border-right: none;
         padding-right: 0.3rem;
         width: 0;
-        animation: typing-line1 2s steps(20, end) forwards,
-                   blink-caret 0.7s step-end 10;
+        animation: typing-line1 2s steps(20, end) forwards;
     }
     
     #textH1 b {
         display: block;
-        text-align: center;
+        text-align: left;
         font-size: 0;
         font-weight: 200;
         opacity: 0;
@@ -165,18 +165,19 @@
     
     #textH1 b::before {
         content: '&';
-        display: inline-block;
+        display: block;
+        text-align: center;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid transparent;
+        border-right: none;
         padding-right: 0.3rem;
-        width: 0;
+        width: 100%;
         animation: typing-line2 0.5s steps(1, end) 2s forwards;
     }
     
     #textH1 b::after {
-        content: 'Desenvolvimento';
+        content: 'Desenvolvimento inovador';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
@@ -191,14 +192,9 @@
     @keyframes typing-line1 {
         0% { 
             width: 0;
-            border-right-color: var(--primary-color);
-        }
-        99% {
-            border-right-color: var(--primary-color);
         }
         100% { 
-            width: 100%; 
-            border-right-color: transparent; 
+            width: 100%;
         }
     }
     
@@ -220,6 +216,7 @@
         font-size: 0.9rem;
     }
 }
+
 @media (max-width: 600px) {
     h1 {
         display: flex;
@@ -238,24 +235,24 @@
         animation: none;
         overflow: visible;
         line-height: 1.3;
+        text-align: left;
     }
     
     #textH1::before {
-        content: 'Soluções Criativas';
+        content: 'Soluções Criativas para';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid var(--primary-color);
+        border-right: none;
         padding-right: 0.3rem;
         width: 0;
-        animation: typing-line1 2s steps(20, end) forwards,
-                   blink-caret 0.7s step-end 10;
+        animation: typing-line1 2s steps(20, end) forwards;
     }
     
     #textH1 b {
         display: block;
-        text-align: center;
+        text-align: left;
         font-size: 0;
         font-weight: 200;
         opacity: 0;
@@ -263,19 +260,20 @@
     }
     
     #textH1 b::before {
-        content: '&';
-        display: inline-block;
+        content: 'a';
+        display: block;
+        text-align: center;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid transparent;
+        border-right: none;
         padding-right: 0.3rem;
-        width: 0;
+        width: 100%;
         animation: typing-line2 0.5s steps(1, end) 2s forwards;
     }
     
     #textH1 b::after {
-        content: 'Desenvolvimento';
+        content: 'inovação tecnológica';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
@@ -290,14 +288,9 @@
     @keyframes typing-line1 {
         0% { 
             width: 0;
-            border-right-color: var(--primary-color);
-        }
-        99% {
-            border-right-color: var(--primary-color);
         }
         100% { 
-            width: 100%; 
-            border-right-color: transparent; 
+            width: 100%;
         }
     }
     
@@ -352,6 +345,14 @@
     .about__container {
         flex-direction: row;
         text-align: left;
+    }
+
+    .about__actions {
+        justify-content: center;
+    }
+
+    .about__actions .btn {
+        width: auto;
     }
 }
 

@@ -29,3 +29,13 @@
 .btn--primary span {
     color: var(--primary-color);
 }
+.btn--secondary {
+    background: var(--primary-color);
+    color: var(--primary-bg-color);
+    text-decoration: none;
+    border-color: var(--primary-color);
+}
+
+.btn--secondary span {
+    color: var(--primary-bg-color);
+}
