@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <meta name="description" content="Portfólio do desenvolverdor João Ricardo">
 
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/13-bb8-toggle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
@@ -42,7 +43,39 @@
             <img class="brand_logo" src="assets/image/icon.png" alt="Logo JR">
         </div>
         <div class="header__toggle">
-            <i id="toggleTheme" class="bi bi-sun"></i>
+            <label class="bb8-toggle">
+                <input class="bb8-toggle__checkbox" type="checkbox" id="toggleTheme">
+                <div class="bb8-toggle__container">
+                    <div class="bb8-toggle__scenery">
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="bb8-toggle__star"></div>
+                        <div class="tatto-1"></div>
+                        <div class="tatto-2"></div>
+                        <div class="gomrassen"></div>
+                        <div class="hermes"></div>
+                        <div class="chenini"></div>
+                        <div class="bb8-toggle__cloud"></div>
+                        <div class="bb8-toggle__cloud"></div>
+                        <div class="bb8-toggle__cloud"></div>
+                    </div>
+                    <div class="bb8">
+                        <div class="bb8__head-container">
+                            <div class="bb8__antenna"></div>
+                            <div class="bb8__antenna"></div>
+                            <div class="bb8__head"></div>
+                        </div>
+                        <div class="bb8__body"></div>
+                    </div>
+                    <div class="artificial__hidden">
+                        <div class="bb8__shadow"></div>
+                    </div>
+                </div>
+            </label>
         </div>
     </header>
     <nav class="nav--mobile">
@@ -163,6 +196,34 @@
             </div>
         </div>
     </section>
+       <section class="skills">
+        <h2>CONHECIMENTO EM TECNOLOGIAS COMO:</h2>
+        <div class="skills__container">
+            <ul class="skills__list">
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/js.png" alt="Logo JavaScript">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/node.png" alt="Logo NodeJs">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/python.png" alt="Logo Python">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/mysql.png" alt="Logo Mysql">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/html.png" alt="Logo HTML">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/css.png" alt="Logo CSS">
+                </li>
+                <li class="skills__item">
+                    <img class="skills__logo" src="assets/skills/go.png" alt="Logo Go">
+                </li>
+            </ul>
+        </div>
+    </section>
     <section id="curriculo" class="about">
         <h2>CURRÍCULO</h2>
         <div class="about__container">
@@ -216,23 +277,7 @@
             </div>
         </div>
     </section>
-    <section class="skills">
-        <h2>CONHECIMENTO EM TECNOLOGIAS COMO:</h2>
-        <ul class="skills__list">
-            <li class="skills__item">
-                <img class="skills__logo" src="assets/skills/js.png" alt="Logo JavaScript">
-            </li>
-            <li class="skills__item">
-                <img class="skills__logo" src="assets/skills/node.png" alt="Logo NodeJs">
-            </li>
-            <li class="skills__item">
-                <img class="skills__logo" src="assets/skills/python.png" alt="Logo Python">
-            </li>
-            <li class="skills__item">
-                <img class="skills__logo" src="assets/skills/mysql.png" alt="Logo Mysql">
-            </li>
-        </ul>
-    </section>
+ 
     <section id="projetos">
         <h2>PROJETOS</h2>
         <div class="projects__container">
@@ -254,19 +299,16 @@
                         <img class="skills__logo" src="assets/skills/js.png" alt="Logo JavaScript">
                     </li>
                     <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/node.png" alt="Logo NodeJs">
+                        <img class="skills__logo" src="assets/skills/html.png" alt="Logo HTML">
                     </li>
                     <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/python.png" alt="Logo Python">
-                    </li>
-                    <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/mysql.png" alt="Logo Mysql">
+                        <img class="skills__logo" src="assets/skills/css.png" alt="Logo CSS">
                     </li>
                 </ul>
             </div>
 
             <div class="projects__card">
-                <img class="card__covers" src="assets/image/model.jpg" alt="Nome do Projeto">
+                <img class="card__covers" src="assets/image/billion.png" alt="Nome do Projeto">
                 <h3 class="card__title">Segundo Projeto</h3>
                 <p class="card__description">Descrição do projeto com detalhes sobre o que foi desenvolvido e os
                     principais objetivos alcançados.</p>
@@ -278,16 +320,7 @@
                 <ul class="skills__list">
                     <li class="skills__item">
                         <img class="skills__logo" src="assets/skills/js.png" alt="Logo JavaScript">
-                    </li>
-                    <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/node.png" alt="Logo NodeJs">
-                    </li>
-                    <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/python.png" alt="Logo Python">
-                    </li>
-                    <li class="skills__item">
-                        <img class="skills__logo" src="assets/skills/mysql.png" alt="Logo Mysql">
-                    </li>
+                    </li>   
                 </ul>
             </div>
 

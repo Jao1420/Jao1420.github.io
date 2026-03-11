@@ -1,18 +1,15 @@
-const toggleTheme= document.getElementById("toggleTheme")
-const rootHtml= document.documentElement
+const toggleTheme = document.getElementById("toggleTheme")
+const rootHtml = document.documentElement
 const menuLinks = document.querySelectorAll(".menu__link")
 
 function changeTheme(){
-    const currentTheme=rootHtml.getAttribute("data-theme")
+    const currentTheme = rootHtml.getAttribute("data-theme")
     
     if(currentTheme === "dark") {
         rootHtml.setAttribute("data-theme", "light")
-    }else{
-        rootHtml.setAttribute("data-theme","dark")
+    } else {
+        rootHtml.setAttribute("data-theme", "dark")
     } 
-
-    toggleTheme.classList.toggle("bi-sun")
-    toggleTheme.classList.toggle("bi-moon-stars")
 }
 
 function setActiveMenuLink(clickedLink) {
@@ -84,3 +81,17 @@ window.addEventListener("scroll", function() {
 })
 
 toggleTheme.addEventListener("click", changeTheme);
+
+// Animar skills carousel no mobile
+const skillsList = document.querySelector(".skills .skills__list");
+if (skillsList) {
+    const skillsItems = Array.from(skillsList.querySelectorAll(".skills__item"));
+    
+    // Clonar os items para criar loop infinito apenas se for mobile
+    if (window.innerWidth <= 529) {
+        skillsItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            skillsList.appendChild(clone);
+        });
+    }
+}
