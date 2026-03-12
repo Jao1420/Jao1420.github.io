@@ -6,7 +6,7 @@
     padding: 4rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    background: var(--primary-bg-color);
+    /* background: var(--primary-bg-color); */
 }
 
 .about h2 {
@@ -255,6 +255,7 @@
     gap: 1.5rem;
     margin-top: 2rem;
     transition: transform 0.1s ease-out;
+    align-items: center;
 }
 
 .about__description {
@@ -263,12 +264,14 @@
     line-height: 1.8;
     font-weight: 300;
     margin: 0;
+    text-align: center;
 }
 
 .about__actions {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about__actions .btn {

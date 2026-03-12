@@ -4,15 +4,15 @@
 
 :root[data-theme='dark'] {
     --primary-color: #f0f0f0;
-    --primary-bg-color: #111217;
-    --secondary-bg-color: #28292E;
+    --primary-bg-color: #1a1a1e;
+    --secondary-bg-color: transparent;
     --primary-border-color: #28292E;
     --secondary-border-color: #56575a;
 
-    --title-color: #F0F0F0;
-    --text-color: #9A9A9C;
-    --link-color: #9A9A9C;
-    --icon-color: #C7C8C9;
+    --title-color: #FFFFFF;
+    --text-color: #E8E8E8;
+    --link-color: #E8E8E8;
+    --icon-color: #FFFFFF;
 }
 
 :root[data-theme='light'] {

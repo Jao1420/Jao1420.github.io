@@ -4,18 +4,29 @@
 
 #projetos {
     padding: 2rem 1rem;
-    background: var(--primary-bg-color);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #projetos h2 {
     margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
 }
 
 .projects__container {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 3.5rem;
     max-width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .projects__card {
@@ -26,6 +37,10 @@
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    min-height: 500px;
+    height: 100%;
 }
 
 .projects__card:hover {
@@ -35,7 +50,7 @@
 
 .card__covers {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -53,7 +68,8 @@
     font-size: 0.95rem;
     color: var(--text-color);
     text-align: justify;
-    margin: 0;
+    margin-top: 7px;
+    flex-grow: 1;
 }
 
 .card__list {
@@ -74,7 +90,48 @@
     margin-right: 0.5rem;
 }
 
-.projects__card .skills__list {
-    padding: 1rem;
+.card__skills {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     gap: 1rem;
+    padding: 1rem;
+    list-style: none;
+    margin: 0;
+    animation: none !important;
+    transform: none !important;
+    margin-top: auto;
+}
+
+.card__skills .skills__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--secondary-border-color);
+    border-radius: 50rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Mobile - Card Skills */
+@media (max-width: 529px) {
+    .card__skills {
+        gap: 1rem;
+        padding: 1rem;
+        animation: none !important;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        transform: none !important;
+    }
+
+    .card__skills .skills__item {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
 }

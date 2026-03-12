@@ -2,7 +2,7 @@
 .menu {
     display: flex;
     align-items: center;
-    background: var(--primary-bg-color);
+    /* background: var(--primary-bg-color); */
 }
 
 .menu__item {
@@ -17,6 +17,7 @@
     border-top: 1px solid var(--primary-border-color);
     padding: 0.5rem 0;
     z-index: 99;
+    background: var(--primary-bg-color);
 }
 
 .menu--mobile .menu__item {

@@ -9,7 +9,7 @@
     justify-content: center;
     gap: 1.5rem;
     padding: 2rem 1rem;
-    background: var(--secondary-bg-color);
+    /* background: var(--secondary-bg-color); */
 }
 
 .skills h2 {
@@ -20,8 +20,13 @@
 
 .skills__container {
     width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1rem;
 }
 
 .skills__list {
@@ -32,6 +37,17 @@
     padding: 0.5rem 0;
     list-style: none;
     margin: 0;
+    will-change: transform;
+    animation: scroll-skills 30s linear infinite;
+}
+
+@keyframes scroll-skills {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .skills__item {
@@ -47,6 +63,11 @@
     overflow: hidden;
     padding: 0.5rem;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.skills__item:hover {
+    transform: scale(1.1);
 }
 
 .skills__logo {
@@ -67,52 +88,44 @@
 
     .skills__container {
         width: 100%;
+        max-width: 28rem;
+        margin: 0 auto;
         overflow: hidden;
         display: flex;
         justify-content: center;
+        border-radius: 1rem;
     }
 
     .skills__list {
         gap: 1.5rem;
         padding: 0.5rem 0;
-        animation: scrollSkillsMobile 25s linear infinite;
-        display: flex;
-        flex-wrap: nowrap;
-        width: fit-content;
+        animation: scroll-skills 30s linear infinite;
     }
 
     .skills__item {
         width: 5.5rem;
         height: 5.5rem;
     }
-
-    @keyframes scrollSkillsMobile {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-50%));
-        }
-    }
 }
 
-/* Tablet/Desktop - Skills sem animação */
+/* Tablet/Desktop */
 @media (min-width: 530px) {
     .skills__container {
         width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
-        overflow: visible;
+        overflow: hidden;
+        border-radius: 1rem;
     }
 
     .skills__list {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        width: 100%;
-        animation: none !important;
-        transform: none !important;
+        flex-wrap: nowrap;
+        gap: 3rem;
+        padding: 0.5rem 0;
+        animation: scroll-skills 30s linear infinite;
     }
 
     .skills__item {

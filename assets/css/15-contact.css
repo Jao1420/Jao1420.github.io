@@ -1,0 +1,114 @@
+/* ======================================
+   SEÇÃO DE CONTATO
+   ====================================== */
+
+.contact {
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--title-color);
+    margin-bottom: 1rem;
+}
+
+.contact__subtitle {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.contact__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.contact__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--secondary-bg-color);
+    border: 1px solid var(--primary-border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact__card:hover {
+    background: var(--primary-color);
+    color: var(--primary-bg-color);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact__icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.contact__card:hover .contact__icon {
+    color: var(--primary-bg-color);
+}
+
+.contact__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--title-color);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.contact__card:hover .contact__title {
+    color: var(--primary-bg-color);
+}
+
+.contact__text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.contact__card:hover .contact__text {
+    color: var(--primary-bg-color);
+}
+
+/* Responsive */
+@media (min-width: 750px) {
+    .contact {
+        padding: 3rem 6rem;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact {
+        padding: 3rem 15rem;
+    }
+}

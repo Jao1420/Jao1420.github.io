@@ -2,13 +2,83 @@ const toggleTheme = document.getElementById("toggleTheme")
 const rootHtml = document.documentElement
 const menuLinks = document.querySelectorAll(".menu__link")
 
+function createGalaxyBackground() {
+    // Verifica se o container já existe
+    if (document.getElementById("galaxyContainer")) return;
+    
+    const galaxyContainer = document.createElement("div");
+    galaxyContainer.id = "galaxyContainer";
+    galaxyContainer.className = "galaxy-container";
+    
+    // Cria a lua
+    const moon = document.createElement("div");
+    moon.className = "moon";
+    galaxyContainer.appendChild(moon);
+    
+    galaxyContainer.innerHTML += `
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    `;
+    
+    document.body.insertBefore(galaxyContainer, document.body.firstChild);
+}
+
+function removeGalaxyBackground() {
+    const galaxyContainer = document.getElementById("galaxyContainer");
+    if (galaxyContainer) {
+        galaxyContainer.remove();
+    }
+}
+
+function createLightBackground() {
+    // Verifica se o container já existe
+    if (document.getElementById("lightBackgroundContainer")) return;
+    
+    const lightContainer = document.createElement("div");
+    lightContainer.id = "lightBackgroundContainer";
+    lightContainer.className = "light-background-container";
+    
+    // Cria o sol
+    const sun = document.createElement("div");
+    sun.className = "sun";
+    lightContainer.appendChild(sun);
+    
+    // Cria 6 orbes com animação
+    for (let i = 1; i <= 6; i++) {
+        const orb = document.createElement("div");
+        orb.className = "orb";
+        lightContainer.appendChild(orb);
+    }
+    
+    // Cria 5 nuvens
+    for (let i = 1; i <= 5; i++) {
+        const cloud = document.createElement("div");
+        cloud.className = "cloud";
+        lightContainer.appendChild(cloud);
+    }
+    
+    document.body.insertBefore(lightContainer, document.body.firstChild);
+}
+
+function removeLightBackground() {
+    const lightContainer = document.getElementById("lightBackgroundContainer");
+    if (lightContainer) {
+        lightContainer.remove();
+    }
+}
+
 function changeTheme(){
     const currentTheme = rootHtml.getAttribute("data-theme")
     
     if(currentTheme === "dark") {
         rootHtml.setAttribute("data-theme", "light")
+        removeGalaxyBackground()
+        createLightBackground()
     } else {
         rootHtml.setAttribute("data-theme", "dark")
+        removeLightBackground()
+        createGalaxyBackground()
     } 
 }
 
@@ -82,16 +152,64 @@ window.addEventListener("scroll", function() {
 
 toggleTheme.addEventListener("click", changeTheme);
 
-// Animar skills carousel no mobile
-const skillsList = document.querySelector(".skills .skills__list");
-if (skillsList) {
+// Inicializar background correto ao carregar
+if (rootHtml.getAttribute("data-theme") === "dark") {
+    createGalaxyBackground()
+} else {
+    createLightBackground()
+}
+
+// ======================================
+// ANIMAÇÃO DE SCROLL HORIZONTAL INFINITO - SKILLS
+// ======================================
+function initSkillsScroll() {
+    const skillsList = document.querySelector(".skills__list");
+    if (!skillsList) return;
+
     const skillsItems = Array.from(skillsList.querySelectorAll(".skills__item"));
+    const itemsCount = skillsItems.length;
     
-    // Clonar os items para criar loop infinito apenas se for mobile
-    if (window.innerWidth <= 529) {
-        skillsItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            skillsList.appendChild(clone);
-        });
+    // Clona todos os items para criar o efeito infinito
+    skillsItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        skillsList.appendChild(clone);
+    });
+
+    // Configurações de animação
+    let currentPosition = 0;
+    const speed = 0.5; // pixels por frame
+    let animationId;
+
+    function animate() {
+        currentPosition += speed;
+        skillsList.style.transform = `translateX(-${currentPosition}px)`;
+
+        // Reiniciar quando chegar na metade (loop infinito suave)
+        const scrollWidth = skillsList.scrollWidth;
+        if (currentPosition >= scrollWidth / 2) {
+            currentPosition = 0;
+        }
+
+        animationId = requestAnimationFrame(animate);
     }
+
+    // Pausar animação ao passar o mouse
+    skillsList.addEventListener("mouseenter", () => {
+        cancelAnimationFrame(animationId);
+    });
+
+    // Retomar animação ao sair o mouse
+    skillsList.addEventListener("mouseleave", () => {
+        animate();
+    });
+
+    // Iniciar animação
+    animate();
+}
+
+// Inicializar quando DOM estiver pronto
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSkillsScroll);
+} else {
+    initSkillsScroll();
 }

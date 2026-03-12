@@ -26,7 +26,3 @@
     cursor: pointer;
     transition: ease-in-out 0.5s;
 }
-
-html[data-theme='dark'] .brand_logo {
-    filter: invert(1);
-}
