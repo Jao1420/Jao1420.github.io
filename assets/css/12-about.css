@@ -255,7 +255,6 @@
     gap: 1.5rem;
     margin-top: 2rem;
     transition: transform 0.1s ease-out;
-    align-items: center;
 }
 
 .about__description {
@@ -264,7 +263,6 @@
     line-height: 1.8;
     font-weight: 300;
     margin: 0;
-    text-align: center;
 }
 
 .about__actions {
@@ -272,10 +270,18 @@
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .about__actions .btn {
     min-width: 180px;
+}
+
+@media(min-width: 769px) {
+    .about__actions {
+        gap: 3.5rem;
+    }
 }
 
 @media(max-width: 768px) {
@@ -304,4 +310,9 @@
     .about__actions {
         justify-content: center;
     }
+}
+
+/* Remover linhas animadas completamente no tema escuro */
+html[data-theme='dark'] .about__lines {
+    display: none;
 }

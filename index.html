@@ -164,13 +164,13 @@
             </script>
 
         </div>
-        <div class="main_content2">
+        <!-- <div class="main_content2">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/JseJETvMtHY?si=a4ZUqmhML-5ACfC4"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-        </div>
+        </div> -->
     </main>
     <section id="sobre" class="about about--brief">
         <div class="about__lines">
@@ -188,7 +188,7 @@
         <h2>SOBRE MIM</h2>
         <div class="about__brief-content">
             <div class="about__photo">
-                <img src="assets/image/icon.png" alt="Foto de João Ricardo" class="about__photo-img">
+                <img src="assets/image/boxBox.jfif" alt="Foto de João Ricardo" class="about__photo-img">
             </div>
             <div class="about__brief-text">
                 <p class="about__description">Com experiência prática no desenvolvimento de sistemas, criação de bancos de dados
@@ -197,13 +197,27 @@
                     Software em projetos de maior escala, visando a evolução contínua das minhas competências e a eficiência do
                     setor.</p>
                 <div class="about__actions">
-                    <a href="#contato" class="btn btn--primary">
+                    <a href="#contato" class="btn btn--primary scroll-link">
                         <span>CONECTE-SE COMIGO</span>
                         <i class="bi bi-arrow-up-right"></i>
                     </a>
-                    <!-- <a href="#curriculo" class="btn btn--secondary">CURRÍCULO</a> -->
+                    <a href="#curriculo" class="btn btn--secondary scroll-link">CURRÍCULO</a>
                 </div>
             </div>
+            <script>
+                document.querySelectorAll('.scroll-link').forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        const href = link.getAttribute('href');
+                        if (href.startsWith('#')) {
+                            e.preventDefault();
+                            const target = document.querySelector(href);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }
+                    });
+                });
+            </script>
         </div>
     </section>
        <section class="skills">
@@ -230,7 +244,7 @@
                     <img class="skills__logo" src="assets/skills/css.png" alt="Logo CSS">
                 </li>
                 <li class="skills__item">
-                    <img class="skills__logo" src="assets/skills/gol.png" alt="Logo Go">
+                    <img class="skills__logo skills__logo--go" src="assets/skills/gog.png" alt="Logo Go">
                 </li>
                 <!-- Duplicação para criar efeito infinito -->
                 <li class="skills__item">
@@ -252,7 +266,7 @@
                     <img class="skills__logo" src="assets/skills/css.png" alt="Logo CSS">
                 </li>
                 <li class="skills__item">
-                    <img class="skills__logo" src="assets/skills/gol.png" alt="Logo Go">
+                    <img class="skills__logo skills__logo--go" src="assets/skills/gog.png" alt="Logo Go">
                 </li>
             </ul>
         </div>
@@ -398,12 +412,12 @@
             <a href="https://www.linkedin.com/in/jo%C3%A3o-ricardo-b56205268/" target="_blank" class="contact__card">
                 <i class="contact__icon bi bi-linkedin"></i>
                 <h3 class="contact__title">LinkedIn</h3>
-                <p class="contact__text">João Ricardo Silva</p>
+                <p class="contact__text">João Ricardo Neto</p>
             </a>
-            <a href="mailto:joao@example.com" class="contact__card">
+            <a href="mailto:ricardojoao412@gmail.com" class="contact__card">
                 <i class="contact__icon bi bi-envelope"></i>
                 <h3 class="contact__title">Email</h3>
-                <p class="contact__text">joao@example.com</p>
+                <p class="contact__text">ricardojoao412@gmail.com</p>
             </a>
         </div>
     </section>

@@ -7,7 +7,10 @@ html[data-theme='dark'] .light-background-container {
 }
 
 html[data-theme='light'] .lines {
-  display: none;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .light-background-container {

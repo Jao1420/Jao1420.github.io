@@ -757,7 +757,6 @@ html[data-theme='light'] .galaxy-container {
     1662px 1994px #fff,
     1111px 106px #fff,
     1954px 838px #fff;
-  animation: animStar 50s linear infinite;
 }
 
 #stars:after {
@@ -1675,7 +1674,6 @@ html[data-theme='light'] .galaxy-container {
     104px 1683px #fff,
     934px 1387px #fff,
     314px 739px #fff;
-  animation: animStar 100s linear infinite;
 }
 
 #stars2:after {
@@ -1992,7 +1990,6 @@ html[data-theme='light'] .galaxy-container {
     785px 1654px #fff,
     1543px 1757px #fff,
     287px 1272px #fff;
-  animation: animStar 150s linear infinite;
 }
 
 #stars3:after {
@@ -2103,15 +2100,6 @@ html[data-theme='light'] .galaxy-container {
     785px 1654px #fff,
     1543px 1757px #fff,
     287px 1272px #fff;
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-2000px);
-  }
 }
 
 /* ======================================

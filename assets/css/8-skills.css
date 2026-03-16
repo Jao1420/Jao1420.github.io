@@ -75,6 +75,10 @@
     object-fit: contain;
 }
 
+.skills__logo--go {
+    transform: scale(0.7);
+}
+
 /* Mobile - Responsivo */
 @media (max-width: 529px) {
     .skills {
