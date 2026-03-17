@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/14-galaxy-background.css">
     <link rel="stylesheet" href="assets/css/16-light-background.css">
     <link rel="stylesheet" href="assets/css/15-contact.css">
+    <link rel="stylesheet" href="assets/css/17-modal-projects.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
@@ -90,15 +91,15 @@
                 </a>
             </li>
             <li class="menu__item">
-                <a class="menu__link" href="#projetos">
-                    <i class="menu__icon bi bi-window-stack"></i>
-                    <span class="menu__text">Projetos</span>
-                </a>
-            </li>
-            <li class="menu__item">
                 <a class="menu__link" href="#sobre">
                     <i class="menu__icon bi bi-person"></i>
                     <span class="menu__text">Sobre</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="#projetos">
+                    <i class="menu__icon bi bi-window-stack"></i>
+                    <span class="menu__text">Projetos</span>
                 </a>
             </li>
             <li class="menu__item">
@@ -328,7 +329,7 @@
     <section id="projetos">
         <h2>PROJETOS</h2>
         <div class="projects__container">
-            <div class="projects__card">
+            <div class="projects__card" data-github="https://github.com/Jao1420/CARD-EDITS">
                 <img class="card__covers" src="assets/image/card.png" alt="Criador de Cartões">
                 <h3 class="card__title">Criador de Cartões de Identificação Integrado</h3>
                 <p class="card__description">Solução web interna para geração ágil de cartões corporativos com QR Code,
@@ -354,7 +355,7 @@
                 </ul>
             </div>
 
-            <div class="projects__card">
+            <div class="projects__card" data-github="https://github.com/Jao1420/SPEND-BILLIONER-S-MONEY">
                 <img class="card__covers" src="assets/image/billion.png" alt="Spend Billionaire Money">
                 <h3 class="card__title">Spend Billionaire Money</h3>
                 <p class="card__description">Aplicação interativa inspirada em "Spend Bill Gates Money". Escolha entre 3 bilionários e gaste suas fortunas de forma dinâmica. Inclui sistema de carrinho de compras e atualização em tempo real do saldo disponível.</p>
@@ -376,7 +377,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="projects__card">
+            <div class="projects__card" data-github="https://github.com/Jao1420/API-POKEMON-FRONTEND">
                 <img class="card__covers" src="assets/image/poke.png" alt="Nome do Projeto">
                 <h3 class="card__title">Pokedex consulta</h3>
                 <p class="card__description">Projeto desenvolvido para treinar frontend e consumo de APIs. A aplicação consulta dados de pokémons através de uma API externa, exibindo informações detalhadas de forma interativa e responsiva.</p>
@@ -428,6 +429,20 @@
             JR
         </a>
     </footer>
+
+    <!-- Modal para abrir GitHub -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal__overlay"></div>
+        <div class="project-modal__content">
+            <h3 class="project-modal__title">Visitar GitHub?</h3>
+            <p class="project-modal__text">Deseja abrir o repositório deste projeto no GitHub?</p>
+            <div class="project-modal__buttons">
+                <button class="project-modal__btn project-modal__btn--cancel" id="modalCancel">Não</button>
+                <button class="project-modal__btn project-modal__btn--confirm" id="modalConfirm">Sim, ir para GitHub</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/scripts.js">
     </script>
 </body>

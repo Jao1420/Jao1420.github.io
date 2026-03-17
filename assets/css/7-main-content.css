@@ -180,3 +180,8 @@ main {
         top: 110%;
     }
 }
+
+/* Desativa as linhas animadas em modo escuro */
+[data-theme="dark"] .lines {
+    display: none;
+}

@@ -213,3 +213,69 @@ if (document.readyState === "loading") {
 } else {
     initSkillsScroll();
 }
+
+// ======================================
+// MODAL PARA ABRIR PROJETOS NO GITHUB
+// ======================================
+function initProjectsModal() {
+    const projectCards = document.querySelectorAll(".projects__card");
+    const projectModal = document.getElementById("projectModal");
+    const modalConfirm = document.getElementById("modalConfirm");
+    const modalCancel = document.getElementById("modalCancel");
+    const modalOverlay = document.querySelector(".project-modal__overlay");
+    
+    let currentProjectUrl = null;
+
+    // Função para abrir o modal
+    function openModal(url) {
+        currentProjectUrl = url;
+        projectModal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Previne scroll da página
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+        projectModal.classList.remove("active");
+        document.body.style.overflow = "auto"; // Restaura scroll da página
+        currentProjectUrl = null;
+    }
+
+    // Evento de clique em cada card
+    projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const githubUrl = card.getAttribute("data-github");
+            if (githubUrl) {
+                openModal(githubUrl);
+            }
+        });
+    });
+
+    // Botão confirmar
+    modalConfirm.addEventListener("click", () => {
+        if (currentProjectUrl) {
+            window.open(currentProjectUrl, "_blank");
+            closeModal();
+        }
+    });
+
+    // Botão cancelar
+    modalCancel.addEventListener("click", closeModal);
+
+    // Fechar ao clicar no overlay
+    modalOverlay.addEventListener("click", closeModal);
+
+    // Fechar ao pressionar ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && projectModal.classList.contains("active")) {
+            closeModal();
+        }
+    });
+}
+
+// Inicializar o modal quando DOM estiver pronto
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProjectsModal);
+} else {
+    initProjectsModal();
+}
+
