@@ -45,20 +45,9 @@ h1 {
     border-right: 2px solid var(--primary-color);
     padding-right: 0.3rem;
     overflow: hidden;
-    white-space: normal;
+    white-space: nowrap;
     animation: typing 4s steps(45, end) forwards,
                blink-caret 0.7s step-end infinite;
-}
-
-/* Mobile - Remove animação de typing em telas pequenas */
-@media (max-width: 529px) {
-    #textH1 {
-        white-space: normal;
-        word-wrap: break-word;
-        overflow: visible;
-        border-right: none;
-        animation: none;
-    }
 }
 
 @keyframes blink-caret {
