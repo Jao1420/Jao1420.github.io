@@ -100,10 +100,14 @@ function smoothScroll(targetId) {
 // Adiciona evento de clique para todos os links do menu
 menuLinks.forEach(link => {
     link.addEventListener("click", function(e) {
-        e.preventDefault()
         const targetId = this.getAttribute("href")
-        setActiveMenuLink(this)
-        smoothScroll(targetId)
+        
+        // Só prevenir comportamento padrão e fazer scroll se for link interno
+        if (targetId && targetId.startsWith("#")) {
+            e.preventDefault()
+            setActiveMenuLink(this)
+            smoothScroll(targetId)
+        }
     })
 })
 
