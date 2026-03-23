@@ -273,7 +273,7 @@
     }
     
     #textH1 b::after {
-        content: 'inovação tecnológica';
+        content: 'inovações tecnológicas';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
