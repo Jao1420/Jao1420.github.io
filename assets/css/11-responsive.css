@@ -239,7 +239,7 @@
     }
     
     #textH1::before {
-        content: 'Soluções Criativas para';
+        content: 'Soluções Criativas';
         display: block;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
         overflow: hidden;
@@ -260,7 +260,7 @@
     }
     
     #textH1 b::before {
-        content: 'a';
+        content: '&';
         display: block;
         text-align: center;
         font-size: clamp(1.5rem, 5vw, 2.5rem);
