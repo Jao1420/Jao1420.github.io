@@ -1,0 +1,32 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rocketGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#7b2cbf"/>
+      <stop offset="100%" style="stop-color:#e0aaff"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9e00"/>
+      <stop offset="100%" style="stop-color:#9d4edd"/>
+    </linearGradient>
+  </defs>
+  <!-- Fundo -->
+  <circle cx="200" cy="200" r="190" fill="#10002b"/>
+  <!-- Grupo Foguete -->
+  <g transform="translate(200, 220)">
+    <!-- Corpo -->
+    <path d="M-30 0 L0 -100 L30 0 Z" fill="url(#rocketGrad)"/>
+    <!-- Janela -->
+    <circle cx="0" cy="-60" r="8" fill="#10002b" stroke="#e0aaff" stroke-width="2"/>
+    <!-- Asas -->
+    <path d="M-30 0 L-50 20 L-30 20 Z" fill="#5a189a"/>
+    <path d="M30 0 L50 20 L30 20 Z" fill="#5a189a"/>
+    <!-- Fogo -->
+    <path d="M-20 20 Q0 60 20 20" fill="url(#fireGrad)" opacity="0.9">
+      <animate attributeName="d" values="M-20 20 Q0 60 20 20; M-20 20 Q0 50 20 20; M-20 20 Q0 60 20 20" dur="0.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <!-- Estrelas de Fundo -->
+  <circle cx="100" cy="100" r="2" fill="#fff" opacity="0.5"/>
+  <circle cx="300" cy="120" r="3" fill="#fff" opacity="0.5"/>
+  <circle cx="120" cy="300" r="2" fill="#fff" opacity="0.5"/>
+</svg>
